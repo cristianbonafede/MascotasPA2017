@@ -1,0 +1,39 @@
+<div class="super">	<br>
+  		<br>
+		<h1 class="centro">Vota a la mascota que mas te guste!</h1>
+		<br>
+
+	<form >
+		<label>Concursantes:</label> 
+		Conocelos haciendo click sobre su imagen
+		<div class="barra-panel borde-Panel punta-Izq punta-Der">
+			<div class="barra-Scroll">
+
+				<div *ngFor="let item of concursos" class="contiene-Item">
+					<img class="banderas" src="{{item.mascota.imagen}}" title="{{item.mascota.nombre}}"(click)="onClick(item.id, item.mascota, item.descripcion)" >
+				</div> 
+			</div> 
+		</div> 
+		<div *ngIf ="concurso">
+
+			<div  class="informacion">
+
+				<img src="{{imagenSeleccion}}" class="poster">	
+				<h1  class=" titulo" >Conoce a 	{{nombreSeleccion}}! </h1>
+
+				<h3 class="mascota">Nacio el dia: {{fechaNacSeleccion}}</h3>
+				<h3> La deberias votar porque:</h3>
+				<h4>{{descripcionSeleccion}}</h4>
+
+				<button class="btn btn-success" *ngIf = "botonActivado"  (click)="submit()">Votar</button>
+				<div *ngIf ="!botonActivado">
+					<br>
+	 				Ya le has dado tu voto! 
+					 <br>
+					<button class="btn btn-warning" *ngIf ="!botonActivado"  (click)="onDelete()">Eliminar Voto</button>
+				</div>
+			</div>
+	
+			</div>
+		</form>
+</div>

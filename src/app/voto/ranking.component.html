@@ -1,0 +1,60 @@
+<div class="super"><br>
+		<h1 class="titulo1"> Concurso de Mascotas</h1>
+
+		<div class="container" *ngIf = "!mascota.id">
+				<h3 class="centro"> Has click para ver a las mascotas mas votadas!</h3>
+				<button class="btn-roll" (click)="onClick()"  >Ver los ganadores</button>
+		</div>
+
+		<div *ngIf="mascota.id">
+			
+			<h2 class="centro"> Primer Puesto</h2>
+			<div  class="ranking">
+
+				<img src="{{mascota.imagen}}" class="poster">	
+				<h1  class=" titulo" >La mascota ganadora es: {{mascota.nombre}}! </h1>
+
+				<h3 class="mascota">Nacio el dia: {{mascota.fechaNacimiento}}</h3>
+				<h3> Descripcion de {{mascota.nombre}}:</h3>
+				<h4>{{mascota.descripcion}}</h4>
+				<h3> Obtuvo {{primerPuesto}} votos!!</h3>
+
+
+			</div>
+		</div>
+														<br><br><br><br><br><br><br>
+		<div *ngIf="mascota2.id">
+			
+			<h2 class="centro"> Segundo Puesto</h2>
+			<div  class="ranking">
+
+				<img src="{{mascota2.imagen}}" class="poster">	
+				<h1  >El segundo puesto es de: {{mascota2.nombre}}! </h1>
+
+				<h3 class="mascota">Nacio el dia: {{mascota2.fechaNacimiento}}</h3>
+				<h3> Descripcion de {{mascota2.nombre}}:</h3>
+				<h4>{{mascota2.descripcion}}</h4>
+				<h3> Obtuvo {{segundoPuesto}} votos!!</h3>
+
+
+			</div>
+		</div>
+												<br><br><br><br><br><br><br><br><br><br><br><br>
+		<div *ngIf="mascota3.id">
+			
+			<h2 class="centro"> Tercer Puesto</h2>
+			<div  class="ranking">
+
+				<img src="{{mascota3.imagen}}" class="poster">	
+				<h1  >El tercer puesto es de: {{mascota3.nombre}}! </h1>
+
+				<h3 class="mascota">Nacio el dia: {{mascota3.fechaNacimiento}}</h3>
+				<h3> Descripcion de {{mascota3.nombre}}:</h3>
+				<h4>{{mascota3.descripcion}}</h4>
+				<h3> Obtuvo {{tercerPuesto}} votos!!</h3>
+
+
+			</div>
+		</div>
+
+</div>

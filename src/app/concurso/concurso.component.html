@@ -1,0 +1,27 @@
+<div class="super">
+		<br>
+	<h1 class="centro"> Concurso de Mascotas</h1>
+<h3 class="centro"> Inscribi a una de tus mascotas para que participe del concurso.</h3>
+<form name="form" [formGroup]="form" novalidate>
+	<div class="form-group">
+		<label>Descricpion:</label> 
+Contanos, por que tu mascota tiene que ser votada?<br>
+		<textarea name="descripcion" [formControl]="form.controls['descripcion']"></textarea>
+
+		<div class="error"
+			*ngIf="(form.controls['descripcion'].dirty || formSubmitted) && form.controls['descripcion'].invalid">
+			Valor no v&aacute;lido.
+		</div>
+	</div>
+	<div class="form-group">
+		<label>Mascota:</label> 
+Aqui selecciona tu mascota participante.
+		<br />
+		<select name='mascota' [formControl]="form.controls['mascota']" >
+					<option *ngFor="let item of mascotas" [value]="item.id" >{{item.nombre}}</option>
+		</select>	
+	</div>
+	<button class="btn btn-success"  (click)="submitForm()"  [disabled]="form.invalid">Participar</button>
+	<button class="btn btn-default" [routerLink]="['/']" >Cancelar</button>		
+</form>
+</div>
